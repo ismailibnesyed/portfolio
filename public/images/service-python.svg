@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="42" y1="35" x2="514" y2="535" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#312E81"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="snake" x1="167" y1="142" x2="397" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A5B4FC"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="193" y1="205" x2="376" y2="377" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="560" rx="42" fill="url(#bg)"/>
+  <circle cx="447" cy="125" r="78" fill="#818CF8" fill-opacity=".12"/>
+  <circle cx="95" cy="436" r="66" fill="#FBBF24" fill-opacity=".1"/>
+  <rect x="94" y="118" width="372" height="324" rx="26" fill="#0B1220" fill-opacity=".45" stroke="#A5B4FC" stroke-opacity=".28" stroke-width="3"/>
+  <rect x="121" y="145" width="318" height="270" rx="17" fill="#111827" stroke="#64748B" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M138 145h284a17 17 0 0 1 17 17v31H121v-31a17 17 0 0 1 17-17Z" fill="#263449"/>
+  <circle cx="149" cy="168" r="6" fill="#FB7185"/>
+  <circle cx="170" cy="168" r="6" fill="#FBBF24"/>
+  <circle cx="191" cy="168" r="6" fill="#34D399"/>
+  <path d="m177 260-20 19 20 19m50-38 20 19-20 19m-13-51-17 64" stroke="url(#snake)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="267" y="218" width="130" height="13" rx="6.5" fill="#A5B4FC" fill-opacity=".8"/>
+  <rect x="267" y="247" width="96" height="11" rx="5.5" fill="#64748B"/>
+  <rect x="267" y="276" width="119" height="11" rx="5.5" fill="#34D399" fill-opacity=".85"/>
+  <rect x="267" y="305" width="78" height="11" rx="5.5" fill="#64748B"/>
+  <rect x="267" y="334" width="111" height="11" rx="5.5" fill="#FBBF24" fill-opacity=".85"/>
+  <path d="m185 385 95 28 95-28" stroke="url(#gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="280" cy="413" r="10" fill="#FDE68A"/>
+  <path d="M380 93v25m-12.5-12.5h25" stroke="#FDE68A" stroke-width="7" stroke-linecap="round"/>
+</svg>
