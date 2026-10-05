@@ -1,5 +1,6 @@
 import { FiLayers, FiMonitor, FiServer, FiTerminal } from "react-icons/fi";
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaTelegramPlane, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaPinterestP, FaThreads } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 
 export const profile = {
@@ -11,7 +12,7 @@ export const profile = {
   phone: "+880 1608 591562",
   whatsapp: "8801608591562",
   photo: "/images/profile.png",
-  resumeUrl: "",
+  resumeUrl: "https://drive.google.com/file/d/1Dmo0lAp8sWkIvUSO0NBk3fSWqa87_Y1S/view?usp=drive_link",
 };
 
 export const socials = [
@@ -19,7 +20,10 @@ export const socials = [
   { name: "GitHub", url: "https://github.com/ismailibnesyed", icon: FaGithub, color: "#333", external: true },
   { name: "Telegram", url: "https://t.me/ismailibnesyed", icon: FaTelegramPlane, color: "#229ED9", handle: "@ismailibnesyed", external: true },
   { name: "Facebook", url: "https://facebook.com/ismailibnesyed", icon: FaFacebookF, color: "#1877F2", handle: "ismailibnesyed", external: true },
-  { name: "Twitter", url: "https://x.com/ismailibnesyed", icon: FaTwitter, color: "#1DA1F2", handle: "@ismailibnesyed", external: true },
+  { name: "X", url: "https://x.com/ismailibnesyed", icon: FaTwitter, color: "#111827", handle: "@ismailibnesyed", external: true },
+  { name: "Threads", url: "https://www.threads.com/@ismailibnesyed", icon: FaThreads, color: "#111827", handle: "@ismailibnesyed", external: true },
+  { name: "Instagram", url: "https://www.instagram.com/ismailibnesyed/", icon: FaInstagram, color: "#e1306c", handle: "@ismailibnesyed", external: true },
+  { name: "Pinterest", url: "https://www.pinterest.com/ismailibnesyed/", icon: FaPinterestP, color: "#e60023", handle: "ismailibnesyed", external: true },
   { name: "WhatsApp", url: "https://wa.me/8801608591562", icon: FaWhatsapp, color: "#16a34a", handle: "+880 1608 591562", external: true },
   { name: "Gmail", url: "mailto:ismailibnesyed@gmail.com", icon: SiGmail, color: "#b91c1c", handle: "ismailibnesyed@gmail.com", external: false },
 ];

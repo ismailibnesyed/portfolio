@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { profile, heroStats, heroBadges } from "../data/data";
 import Container from "./Container";
-import { goTo } from "./scrollTo";
 
 export default function Hero() {
   const [photoFailed, setPhotoFailed] = useState(false);
@@ -24,7 +23,13 @@ export default function Hero() {
               ))}
             </div>
             <div className="flex flex-wrap gap-3">
-              <button className="btn" onClick={() => goTo("project")}>View Projects</button>
+              <a
+                className="btn"
+                href={`https://drive.google.com/uc?export=download&id=${new URL(profile.resumeUrl).pathname.match(/\/d\/([^/]+)/)?.[1] || ""}`}
+                download
+              >
+                Download Resume
+              </a>
               <a className="btn btn-o" href={`mailto:${profile.email}`}>Contact Me</a>
             </div>
           </div>
