@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { contactCards } from "../data/data";
 import Container from "./Container";
 import Title from "./Title";
@@ -6,18 +6,26 @@ import Title from "./Title";
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
 const hasAccessKey = Boolean(
-  ACCESS_KEY && ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY" && ACCESS_KEY !== "your_public_web3forms_access_key",
+  ACCESS_KEY
+  && ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY"
+  && ACCESS_KEY !== "your_public_web3forms_access_key",
 );
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState({ type: "", message: "" });
+  const [toast, setToast] = useState({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const submissionInProgress = useRef(false);
 
+  useEffect(() => {
+    if (!toast.message) return undefined;
+    const timer = window.setTimeout(() => setToast({ type: "", message: "" }), 4500);
+    return () => window.clearTimeout(timer);
+  }, [toast]);
+
   const handleChange = (event) => {
     setForm((currentForm) => ({ ...currentForm, [event.target.name]: event.target.value }));
-    if (status.message) setStatus({ type: "", message: "" });
+    if (toast.message) setToast({ type: "", message: "" });
   };
 
   const handleSubmit = async (event) => {
@@ -32,39 +40,34 @@ export default function Contact() {
     };
 
     if (!trimmedForm.name || !trimmedForm.email || !trimmedForm.message) {
-      setStatus({ type: "error", message: "Please complete your name, a valid email, and a message." });
+      setToast({ type: "error", message: "Please complete your name, a valid email, and a message." });
       return;
     }
     if (!formElement.reportValidity()) return;
     if (!hasAccessKey) {
-      setStatus({
+      setToast({
         type: "error",
-        message: "The contact form is not configured yet. Add your Web3Forms access key to frontend/.env and restart the site.",
+        message: "The contact form is not configured for this deployment. Add VITE_WEB3FORMS_ACCESS_KEY and redeploy.",
       });
       return;
     }
-
     submissionInProgress.current = true;
     setIsSubmitting(true);
-    setStatus({ type: "", message: "" });
+    setToast({ type: "", message: "" });
 
     try {
-      // Web3Forms keeps this portfolio frontend serverless while delivering to the configured inbox.
+      const formData = new FormData();
+      formData.append("access_key", ACCESS_KEY);
+      formData.append("name", trimmedForm.name);
+      formData.append("email", trimmedForm.email);
+      formData.append("message", trimmedForm.message);
+      formData.append("subject", `Portfolio message from ${trimmedForm.name}`);
+      formData.append("from_name", "Portfolio contact form");
+      formData.append("replyto", trimmedForm.email);
+
       const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          name: trimmedForm.name,
-          email: trimmedForm.email,
-          replyto: trimmedForm.email,
-          message: trimmedForm.message,
-          subject: `Portfolio message from ${trimmedForm.name}`,
-          from_name: "Portfolio contact form",
-        }),
+        body: formData,
       });
       const result = await response.json().catch(() => ({}));
 
@@ -73,9 +76,9 @@ export default function Contact() {
       }
 
       setForm({ name: "", email: "", message: "" });
-      setStatus({ type: "success", message: "Thanks! Your message has been sent successfully." });
+      setToast({ type: "success", message: "Message sent successfully! I’ll get back to you soon." });
     } catch (error) {
-      setStatus({
+      setToast({
         type: "error",
         message: error instanceof TypeError
         ? "We couldn't connect to Web3Forms. Check your connection and try again."
@@ -116,14 +119,22 @@ export default function Contact() {
             <button className="btn disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Sending…" : "Send Message ➤"}
             </button>
-            {status.message && (
-              <p className={`text-xs ${status.type === "success" ? "text-ac" : "text-red-500"}`} role="status" aria-live="polite">
-                {status.message}
-              </p>
-            )}
           </form>
         </div>
       </Container>
+      {toast.message && (
+        <div
+          className={`fixed bottom-5 left-1/2 z-60 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-xl border px-4 py-3 text-sm shadow-2xl backdrop-blur ${
+            toast.type === "success"
+              ? "border-ac/40 bg-ac/15 text-ac"
+              : "border-red-400/40 bg-red-500/15 text-red-300"
+          }`}
+          role="status"
+          aria-live="polite"
+        >
+          {toast.message}
+        </div>
+      )}
     </section>
   );
 }
