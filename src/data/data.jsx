@@ -69,7 +69,7 @@ export const experience = [
 ];
 
 export const projects = [
-  { title: "PowerCare (Bidyut Bondhu)", desc: "Load-shedding & power outage management system with complaints, technicians and admin dashboard.",
+  { title: "PowerCare (Bidyut Bondhu)", desc: "Load-shedding & power outage management system with complaints, technicians and admin dashboard.", image: "/images/powercare-dashboard.png",
     tags: ["FastAPI", "React", "PostgreSQL"], github: "", live: "https://bidyut-bondhu.netlify.app/", apiDocs: "https://bidyut-bondhu.onrender.com/docs", gradient: "from-amber-500 to-amber-800" },
   { title: "GigHive", desc: "Freelance marketplace API with JWT authentication and role-based access.",
     tags: ["FastAPI", "JWT", "MongoDB"], github: "", live: "", gradient: "from-indigo-500 to-sky-500" },

@@ -4,7 +4,7 @@ import Container from "./Container";
 import Title from "./Title";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
-const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
 const hasAccessKey = Boolean(
   ACCESS_KEY && ACCESS_KEY !== "YOUR_WEB3FORMS_ACCESS_KEY" && ACCESS_KEY !== "your_public_web3forms_access_key",
 );
@@ -59,6 +59,7 @@ export default function Contact() {
           access_key: ACCESS_KEY,
           name: trimmedForm.name,
           email: trimmedForm.email,
+          replyto: trimmedForm.email,
           message: trimmedForm.message,
           subject: `Portfolio message from ${trimmedForm.name}`,
           from_name: "Portfolio contact form",
@@ -91,8 +92,8 @@ export default function Contact() {
     <section className="section">
       <Container>
         <Title title="Get in Touch" sub="Contact me" />
-        <div className="grid md:grid-cols-[1fr_1.2fr] gap-6">
-          <div id="contact" className="grid grid-cols-2 gap-3 content-start">
+        <div className="grid gap-6 md:grid-cols-[1fr_1.2fr]">
+          <div id="contact" className="grid content-start grid-cols-1 gap-3 min-[420px]:grid-cols-2">
             {contactCards.map((c) => (
               <a key={c.title} href={c.url} target={c.external ? "_blank" : undefined} rel={c.external ? "noreferrer" : undefined} className="card text-center text-xs flex flex-col gap-1.5 hover:border-ac">
                 <span className="w-8 h-8 rounded-lg mx-auto grid place-items-center" style={{ background: c.color }}><c.icon /></span>
@@ -102,9 +103,9 @@ export default function Contact() {
               </a>
             ))}
           </div>
-          <form id="message" onSubmit={handleSubmit} className="card space-y-3">
-            <b className="text-sm">Write me your project</b>
-            <p className="text-xs text-mu">Your message will be sent securely through Web3Forms.</p>
+          <form id="message" onSubmit={handleSubmit} className="card space-y-4">
+            <b className="text-base">Write me your project</b>
+            <p className="text-sm text-mu">Your message will be sent securely through Web3Forms.</p>
             <label className="sr-only" htmlFor="contact-name">Name</label>
             <input id="contact-name" className="field" name="name" placeholder="Name" autoComplete="name" maxLength={80} required value={form.name} onChange={handleChange} />
             <label className="sr-only" htmlFor="contact-email">Email</label>

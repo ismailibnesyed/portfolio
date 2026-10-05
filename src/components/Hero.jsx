@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { profile, heroStats, heroBadges } from "../data/data";
+import { profile, heroStats } from "../data/data";
 import Container from "./Container";
 
 export default function Hero() {
   const [photoFailed, setPhotoFailed] = useState(false);
-  const pos = ["right-3 top-3 sm:right-4 sm:top-5", "bottom-3 left-3 sm:bottom-5 sm:left-4", "bottom-3 right-3 sm:bottom-5 sm:right-4"];
-
   return (
     <section id="home" className="section hero-section min-h-screen">
       <Container>
@@ -34,7 +32,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="order-1 mx-auto w-full max-w-70 md:order-2 md:max-w-lg">
+          <div className="order-1 mx-auto w-full max-w-60 sm:max-w-72 md:order-2 md:max-w-md">
             <div className="hero-portrait relative aspect-square overflow-hidden rounded-full border border-line">
               <div aria-hidden="true" className="pointer-events-none absolute inset-[5%] z-10 rounded-full border border-ac2/25" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-[12%] z-10 rounded-full border border-ac/15" />
@@ -48,9 +46,6 @@ export default function Hero() {
                   <p className="mt-6 text-sm font-medium text-main">{profile.role}</p>
                 </div>
               )}
-              {heroBadges.map((b, i) => (
-                <span key={b} className={`absolute z-20 ${pos[i]} max-w-[calc(100%-1.5rem)] rounded-full border border-line bg-card/90 px-2 py-1 text-[10px] font-semibold text-main shadow-lg backdrop-blur-sm sm:px-4 sm:py-2 sm:text-xs`}>{b}</span>
-              ))}
             </div>
           </div>
         </div>
