@@ -35,7 +35,6 @@ export const contactCards = [
 ];
 
 export const heroStats = [["2+", "Major Projects"], ["20+", "Technologies"], ["100%", "Commitment"]];
-export const heroBadges = ["Python · APIs", "Problem Solving", "Web Development"];
 
 export const technologies = ["Python","FastAPI","Pydantic","NumPy","Pandas","Matplotlib","Docker","Redis","Nginx","React",
   "PostgreSQL","MySQL","Git","JavaScript","C++","C","HTML","CSS","Bootstrap","Problem Solving"];
@@ -69,7 +68,7 @@ export const experience = [
 ];
 
 export const projects = [
-  { title: "PowerCare (Bidyut Bondhu)", desc: "Load-shedding & power outage management system with complaints, technicians and admin dashboard.", image: "/images/powercare-dashboard.png",
+  { title: "PowerCare (Bidyut Bondhu)", desc: "Load-shedding & power outage management system with complaints, technicians and admin dashboard.", image: "/images/powercare.jpg",
     tags: ["FastAPI", "React", "PostgreSQL"], github: "", live: "https://bidyut-bondhu.netlify.app/", apiDocs: "https://bidyut-bondhu.onrender.com/docs", gradient: "from-amber-500 to-amber-800" },
   { title: "GigHive", desc: "Freelance marketplace API with JWT authentication and role-based access.",
     tags: ["FastAPI", "JWT", "MongoDB"], github: "", live: "", gradient: "from-indigo-500 to-sky-500" },

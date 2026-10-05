@@ -10,7 +10,7 @@ function ProjectCard({ p, onView }) {
   return (
     <article className="card flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-ac/50">
       {p.image
-        ? <img src={p.image} alt={`${p.title} preview`} loading="lazy" className="h-32 w-full object-cover rounded-xl mb-3" />
+        ? <img src={p.image} alt={`${p.title} preview`} loading="lazy" decoding="async" width="900" height="386" className="mb-3 h-32 w-full rounded-xl object-cover" />
         : <div className={`h-32 rounded-xl mb-3 grid place-items-center font-bold text-lg bg-linear-to-br ${p.gradient || "from-indigo-500 to-sky-500"}`}>{p.title.split(" ")[0]}</div>}
       <b>{p.title}</b>
       <p className="text-mu text-sm my-2 flex-1">{p.description || p.desc}</p>

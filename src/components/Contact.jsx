@@ -49,6 +49,7 @@ export default function Contact() {
     setStatus({ type: "", message: "" });
 
     try {
+      // Web3Forms keeps this portfolio frontend serverless while delivering to the configured inbox.
       const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
         headers: {
@@ -104,8 +105,8 @@ export default function Contact() {
             ))}
           </div>
           <form id="message" onSubmit={handleSubmit} className="card space-y-4">
-            <b className="text-base">Write me your project</b>
-            <p className="text-sm text-mu">Your message will be sent securely through Web3Forms.</p>
+            <b className="text-base">Let’s build something great</b>
+            <p className="text-sm text-mu">Tell me about your idea, and I’ll get back to you soon.</p>
             <label className="sr-only" htmlFor="contact-name">Name</label>
             <input id="contact-name" className="field" name="name" placeholder="Name" autoComplete="name" maxLength={80} required value={form.name} onChange={handleChange} />
             <label className="sr-only" htmlFor="contact-email">Email</label>

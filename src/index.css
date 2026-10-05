@@ -91,7 +91,7 @@ button {
 }
 
 .section.hero-section {
-  padding-top: 9rem;
+  padding-top: 7.5rem;
 }
 
 @media (max-width: 639px) {
@@ -100,7 +100,13 @@ button {
   }
 
   .section.hero-section {
-    padding-top: 8rem;
+    padding-top: 6.5rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .section.hero-section {
+    padding-top: 7rem;
   }
 }
 
@@ -244,9 +250,4 @@ button {
     -webkit-print-color-adjust: exact;
   }
 
-  .resume-page {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-  }
 }

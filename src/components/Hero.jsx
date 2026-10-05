@@ -8,7 +8,7 @@ export default function Hero() {
     <section id="home" className="section hero-section min-h-screen">
       <Container>
         <div className="grid min-w-0 items-center gap-8 md:grid-cols-2 md:gap-10">
-          <div className="order-2 min-w-0 md:order-1">
+          <div className="order-1 min-w-0">
             <span className="inline-block text-xs border border-ac/40 text-ac rounded-full px-3 py-1 mb-4">● Available for work</span>
             <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">Hi, I'm {profile.name} — {profile.role}</h1>
             <p className="text-mu mt-4 max-w-md">{profile.intro}</p>
@@ -32,7 +32,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="order-1 mx-auto w-full max-w-60 sm:max-w-72 md:order-2 md:max-w-md">
+          <div className="order-2 mx-auto w-full max-w-72 sm:max-w-80 md:max-w-md">
             <div className="hero-portrait relative aspect-square overflow-hidden rounded-full border border-line">
               <div aria-hidden="true" className="pointer-events-none absolute inset-[5%] z-10 rounded-full border border-ac2/25" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-[12%] z-10 rounded-full border border-ac/15" />

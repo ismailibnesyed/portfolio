@@ -11,6 +11,7 @@ export default function MotionEffects() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Keep smooth scrolling and section navigation on one Lenis instance.
     const lenis = new Lenis({ smoothWheel: true, syncTouch: false });
     const updateLenis = (time) => lenis.raf(time * 1000);
     const updateScrollTrigger = () => ScrollTrigger.update();
