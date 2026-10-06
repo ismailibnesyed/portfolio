@@ -89,8 +89,7 @@ export default function Hero() {
               <a
                 className="group inline-flex min-h-11 items-center gap-2 rounded-xl bg-ac px-5 py-2.5 text-sm font-semibold text-active shadow-lg shadow-ac/20 transition duration-300 hover:-translate-y-1 hover:brightness-110"
                 href={profile.resumeUrl}
-                target="_blank"
-                rel="noreferrer"
+                download="Resume of Ismail.pdf"
               >
                 <span>
                   Download Resume
