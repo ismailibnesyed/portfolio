@@ -7,7 +7,7 @@ export default function Technologies() {
   const rows = [technologies.slice(0, half), technologies.slice(half)];
 
   return (
-    <section id="tech" className="section overflow-hidden">
+    <section id="tech" className="section theme-surface overflow-hidden">
       <Container>
         <Title title="Technologies" sub="My Tech Stack" />
         <div className="space-y-3 overflow-hidden">

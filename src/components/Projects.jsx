@@ -2,36 +2,12 @@ import { useEffect, useState } from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { projects } from "../data/data";
 import Container from "./Container";
+import ProjectCard from "./ProjectCard";
 import Title from "./Title";
-
-function ProjectCard({ p, onView }) {
-  const isProfileLink = p.github?.replace(/\/+$/, "") === "https://github.com/ismailibnesyed";
-
-  return (
-    <article className="card flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:border-ac/50">
-      {p.image
-        ? <img src={p.image} alt={`${p.title} preview`} loading="lazy" decoding="async" width="900" height="386" className="mb-3 h-32 w-full rounded-xl object-cover" />
-        : <div className={`h-32 rounded-xl mb-3 grid place-items-center font-bold text-lg bg-linear-to-br ${p.gradient || "from-indigo-500 to-sky-500"}`}>{p.title.split(" ")[0]}</div>}
-      <b>{p.title}</b>
-      <p className="text-mu text-sm my-2 flex-1">{p.description || p.desc}</p>
-      <div className="flex flex-wrap gap-1 mb-4">
-        {(p.tags || []).map((t) => <span key={t} className="text-[11px] bg-line rounded-md px-2 py-0.5">{t}</span>)}
-      </div>
-      <div className="flex flex-wrap gap-2">
-        <button type="button" className="btn" onClick={() => onView(p)}>View Project</button>
-        {p.github && <a className="btn btn-o" href={p.github} target="_blank" rel="noreferrer"><FiGithub /> {isProfileLink ? "GitHub Profile" : "GitHub"}</a>}
-        {p.live && <a className="btn" href={p.live} target="_blank" rel="noreferrer"><FiExternalLink /> Live Demo</a>}
-        {p.apiDocs && <a className="btn btn-o" href={p.apiDocs} target="_blank" rel="noreferrer"><FiExternalLink /> API Docs</a>}
-      </div>
-    </article>
-  );
-}
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
-  const displayedProjects = projects.length > 0 && projects.length < 6
-    ? Array.from({ length: 6 }, (_, index) => projects[index % projects.length])
-    : projects;
+  const displayedProjects = projects;
 
   useEffect(() => {
     if (!selectedProject) return undefined;
@@ -47,7 +23,7 @@ export default function Projects() {
       <Container>
         <Title title="Projects" sub="Recent projects" />
         {displayedProjects.length ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">{displayedProjects.map((p, index) => <ProjectCard key={`${p.id || p.title}-${index}`} p={p} onView={setSelectedProject} />)}</div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{displayedProjects.map((project, index) => <ProjectCard key={`${project.id || project.title}-${index}`} project={project} onView={setSelectedProject} />)}</div>
         ) : (
           <p className="text-center text-mu text-sm">Projects will appear here soon.</p>
         )}

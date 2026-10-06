@@ -24,6 +24,7 @@
   --hero-glow: rgba(99, 102, 241, 0.2);
   --hero-shadow: 0 24px 70px rgba(0, 0, 0, 0.38), 0 0 48px rgba(99, 102, 241, 0.1);
   --hero-photo-shadow: 0 12px 18px rgba(0, 0, 0, 0.2);
+  --hero-gradient: linear-gradient(135deg, #6366f1 0%, #22c55e 52%, #6366f1 100%);
   --bg-line: #1d2745;
   --text-main: #e8ecf8;
   --text-soft: #8b95b5;
@@ -46,6 +47,7 @@
   --hero-glow: rgba(124, 58, 237, 0.12);
   --hero-shadow: 0 24px 70px rgba(30, 41, 59, 0.12), 0 0 48px rgba(124, 58, 237, 0.08);
   --hero-photo-shadow: 0 12px 18px rgba(15, 23, 42, 0.18);
+  --hero-gradient: linear-gradient(135deg, #7c3aed 0%, #15803d 52%, #7c3aed 100%);
   --bg-line: #e2e8f0;
   --text-main: #0f172a;
   --text-soft: #475569;
@@ -69,6 +71,11 @@ body {
   transition: background 0.25s ease, color 0.25s ease;
 }
 
+#root {
+  min-height: 100vh;
+  background: var(--bg-page);
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -79,7 +86,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid #22c55e;
+  outline: 2px solid var(--color-ac);
   outline-offset: 3px;
 }
 
@@ -122,11 +129,11 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid #4f46e5;
+  border: 1px solid var(--color-ac2);
   border-radius: 999px;
-  background: #4f46e5;
+  background: var(--color-ac2);
   padding: 9px 20px;
-  color: #fff;
+  color: var(--color-active);
   font-size: 14px;
   transition: filter 0.2s, transform 0.2s;
 }
@@ -146,6 +153,22 @@ button {
 
 .hero-portrait img {
   filter: drop-shadow(var(--hero-photo-shadow));
+}
+
+.hero-image-shell {
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 42%, var(--hero-glow), transparent 68%),
+    var(--bg-page);
+}
+
+.hero-photo {
+  mix-blend-mode: screen;
+  filter: contrast(1.02) saturate(0.95);
+}
+
+.theme-surface {
+  background: var(--bg-page);
 }
 
 .text-mu {
@@ -195,7 +218,7 @@ button {
 }
 
 .field:focus {
-  border-color: #22c55e;
+  border-color: var(--color-ac);
 }
 
 .field::placeholder {

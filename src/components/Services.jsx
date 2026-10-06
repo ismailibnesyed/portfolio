@@ -35,9 +35,9 @@ export default function Services() {
       </Container>
 
       {open && (
-        <div className="fixed inset-0 z-60 grid place-items-center bg-black/70 p-4" onClick={() => setOpen(null)}>
-          <div role="dialog" aria-modal="true" aria-labelledby="service-dialog-title" className="card max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-between mb-3"><b id="service-dialog-title">{open.title}</b><button onClick={() => setOpen(null)} aria-label="Close service details">✕</button></div>
+        <div className="fixed inset-0 z-60 grid place-items-center overflow-y-auto bg-black/70 p-4" onClick={() => setOpen(null)}>
+          <div role="dialog" aria-modal="true" aria-labelledby="service-dialog-title" className="card max-h-[calc(100dvh-2rem)] w-full max-w-sm overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="mb-3 flex items-center justify-between gap-4"><b id="service-dialog-title">{open.title}</b><button type="button" className="grid h-11 w-11 shrink-0 place-items-center rounded-lg hover:bg-line" onClick={() => setOpen(null)} aria-label="Close service details">✕</button></div>
             <ul className="space-y-2 text-sm text-mu list-disc pl-5">{open.points.map((p) => <li key={p}>{p}</li>)}</ul>
           </div>
         </div>

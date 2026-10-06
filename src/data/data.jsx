@@ -7,12 +7,12 @@ export const profile = {
   name: "Ismail Hossain",
   role: "Python & Full Stack Web Developer",
   intro: "I build fast, secure APIs with FastAPI and PostgreSQL, and clean React interfaces on top — from idea to deployment.",
-  about: "I'm Ismail Hossain, a Python & Full Stack Web Developer and a B.Sc. student in Electronics and Telecommunication Engineering at CUET. I love building complete products, from a fast FastAPI backend with PostgreSQL and JWT authentication to a clean, responsive React interface. My projects include PowerCare, a deployed load-shedding and outage management system, and GigHive, a freelance marketplace API. My engineering background gives me a problem-solving mindset, and I'm comfortable with C, C++, and MATLAB too. I care about readable code, secure APIs, and products that people actually use. I'm currently exploring AI/ML with NumPy, Pandas, and PyTorch, and I'm looking for opportunities where I can learn, contribute, and grow as a developer.",
+  about: "I'm Ismail Hossain, a Python & Full Stack Web Developer and a B.Sc. student in Electronics and Telecommunication Engineering at CUET. I love building complete products, from a fast FastAPI backend with PostgreSQL and JWT authentication to a clean, responsive React interface. My main project is PowerCare, a deployed load-shedding and outage management system with a complete backend and frontend. My engineering background gives me a problem-solving mindset, and I'm comfortable with C, C++, and MATLAB too. I care about readable code, secure APIs, and products that people actually use. I'm currently exploring AI/ML with NumPy, Pandas, and PyTorch, and I'm looking for opportunities where I can learn, contribute, and grow as a developer.",
   email: "ismailibnesyed@gmail.com",
   phone: "+880 1608 591562",
   whatsapp: "8801608591562",
   photo: "/images/profile.png",
-  resumeUrl: "https://drive.google.com/file/d/1Dmo0lAp8sWkIvUSO0NBk3fSWqa87_Y1S/view?usp=drive_link",
+  resumeUrl: "https://drive.google.com/drive/folders/1GQBR48MQz39EUCr_lieF3wLUHRtqpPTI?usp=sharing",
 };
 
 export const socials = [
@@ -34,10 +34,10 @@ export const contactCards = [
   { ...socials.find((social) => social.name === "GitHub"), title: "GITHUB", action: "View profile →" },
 ];
 
-export const heroStats = [["2+", "Major Projects"], ["20+", "Technologies"], ["100%", "Commitment"]];
+export const heroStats = [["5+", "Major Projects"], ["20+", "Technologies"], ["100%", "Commitment"]];
 
-export const technologies = ["Python","FastAPI","Pydantic","NumPy","Pandas","Matplotlib","Docker","Redis","Nginx","React",
-  "PostgreSQL","MySQL","Git","JavaScript","C++","C","HTML","CSS","Bootstrap","Problem Solving"];
+export const technologies = ["Python", "FastAPI", "Pydantic", "NumPy", "Pandas", "Matplotlib", "Docker", "Redis", "Nginx", "React",
+  "PostgreSQL", "MySQL", "Git", "JavaScript", "C++", "C", "HTML", "CSS", "Bootstrap", "Problem Solving"];
 
 export const skills = {
   Backend: [["Python", 85], ["FastAPI", 80], ["PostgreSQL", 70], ["Docker", 65], ["Redis", 60]],
@@ -46,14 +46,86 @@ export const skills = {
 export const exploring = ["NumPy", "Pandas", "scikit-learn", "PyTorch"];
 
 export const services = [
-  { title: "Frontend Development", icon: FiMonitor, image: "/images/service-frontend.svg", desc: "Responsive, fast React interfaces with HTML, CSS, Bootstrap and JavaScript.",
-    points: ["Responsive layouts for all devices", "Reusable React components", "Fast loading pages", "Clean, maintainable code"] },
-  { title: "Backend Development", icon: FiServer, image: "/images/service-backend.svg", desc: "FastAPI REST APIs, JWT auth, PostgreSQL/MySQL, Redis, Docker and Nginx.",
-    points: ["REST APIs with FastAPI", "JWT authentication", "PostgreSQL / MySQL design", "Docker & Nginx deployment"] },
-  { title: "Full Stack Development", icon: FiLayers, image: "/images/service-full-stack.svg", desc: "Complete web applications that connect polished React interfaces to reliable APIs and databases.",
-    points: ["End-to-end React and FastAPI applications", "Frontend and backend integration", "Database-backed user experiences", "Responsive, maintainable delivery"] },
-  { title: "Python Development", icon: FiTerminal, image: "/images/service-python.svg", desc: "Practical Python tools, automation, data workflows and API development tailored to your needs.",
-    points: ["Python scripts and automation", "FastAPI service development", "Data processing workflows", "Readable, testable code"] },
+  {
+    title: "Frontend Development",
+    icon: FiMonitor,
+    image: "/images/service-frontend.svg",
+    desc: "I build modern, responsive, and user-friendly React interfaces with a strong focus on clean UI, performance, accessibility, and maintainable component-based architecture. I turn designs and ideas into polished web experiences that work smoothly across desktop, tablet, and mobile devices.",
+
+    points: [
+      "Responsive layouts for desktop, tablet, and mobile",
+      "Modern React applications with reusable components",
+      "Tailwind CSS-based clean and scalable UI development",
+      "Interactive interfaces with JavaScript and React",
+      "Reusable UI components and consistent design systems",
+      "Fast-loading and performance-focused web pages",
+      "Clean, maintainable, and organized frontend code",
+      "API integration with backend services",
+    ],
+  },
+
+  {
+    title: "Backend Development",
+    icon: FiServer,
+    image: "/images/service-backend.svg",
+    desc: "I develop reliable and scalable backend systems using Python and FastAPI. I focus on building well-structured REST APIs, secure authentication systems, database-driven applications, caching, and production-ready backend architectures.",
+
+    points: [
+      "RESTful API development with FastAPI",
+      "JWT-based authentication and authorization",
+      "Role-based access control for different users",
+      "PostgreSQL database design and integration",
+      "SQLAlchemy ORM for database operations",
+      "Redis caching and performance optimization",
+      "Request validation and structured API responses",
+      "Clean and maintainable backend architecture",
+      "API documentation with OpenAPI and Swagger",
+      "Error handling and backend security practices",
+    ],
+  },
+
+  {
+    title: "Full Stack Development",
+    icon: FiLayers,
+    image: "/images/service-full-stack.svg",
+    desc: "I build complete full-stack web applications by connecting modern React frontends with reliable FastAPI backends and PostgreSQL databases. From frontend interfaces and authentication to APIs, database integration, and deployment, I work across the complete application stack.",
+
+    points: [
+      "End-to-end React and FastAPI application development",
+      "Frontend and backend API integration",
+      "PostgreSQL-backed web applications",
+      "Authentication and authorization systems",
+      "CRUD-based application development",
+      "Responsive and user-friendly interfaces",
+      "Search, filtering, sorting, and pagination",
+      "Database-driven user experiences",
+      "Redis caching for improved performance",
+      "Docker-based development and deployment",
+      "Clean separation between frontend and backend",
+      "Maintainable and scalable project structure",
+    ],
+  },
+
+  {
+    title: "Python Development",
+    icon: FiTerminal,
+    image: "/images/service-python.svg",
+    desc: "I use Python to develop practical applications, automation scripts, data-processing workflows, backend services, and API-driven solutions. My focus is on writing readable, modular, and maintainable Python code that solves real-world problems efficiently.",
+
+    points: [
+      "Python application and script development",
+      "Automation scripts for repetitive tasks",
+      "FastAPI service and API development",
+      "Object-oriented Python programming",
+      "Data processing and transformation workflows",
+      "File and CSV data handling",
+      "Database integration with Python",
+      "Reusable modules and utility functions",
+      "Readable and maintainable code structure",
+      "Error handling and input validation",
+      "Problem-solving with Python and algorithms",
+    ],
+  },
 ];
 
 export const education = [
@@ -62,16 +134,27 @@ export const education = [
   { title: "B.Sc. in Electronics & Telecommunication Engineering (ETE)", place: "Chittagong University of Engineering and Technology (CUET)", date: "2024 – Present" },
 ];
 export const experience = [
-  { title: "Full Stack Developer", place: "PowerCare (Bidyut Bondhu)", date: "FastAPI · React · Deployed" },
-  { title: "Backend Developer", place: "GigHive — practice project", date: "JWT · PostgreSQL · MongoDB" },
+  { title: "Full Stack & Backend Developer", place: "PowerCare (Bidyut Bondhu)", date: "FastAPI · React · PostgreSQL · Deployed" },
   { title: "Self-learning", place: "Python · C/C++ · MATLAB", date: "2026 – Present" },
 ];
 
 export const projects = [
-  { title: "PowerCare (Bidyut Bondhu)", desc: "Load-shedding & power outage management system with complaints, technicians and admin dashboard.", image: "/images/powercare.jpg",
-    tags: ["FastAPI", "React", "PostgreSQL"], github: "", live: "https://bidyut-bondhu.netlify.app/", apiDocs: "https://bidyut-bondhu.onrender.com/docs", gradient: "from-amber-500 to-amber-800" },
-  { title: "GigHive", desc: "Freelance marketplace API with JWT authentication and role-based access.",
-    tags: ["FastAPI", "JWT", "MongoDB"], github: "", live: "", gradient: "from-indigo-500 to-sky-500" },
+  {
+    title: "PowerCare (Bidyut Bondhu)", desc: "Full-stack load-shedding and power outage management system with a FastAPI backend, complaints, technicians and admin dashboard.", image: "/images/powercare.jpg",
+    tags: ["FastAPI Backend", "React", "PostgreSQL"], github: "https://github.com/ismailibnesyed/Bidyut-Bondhu", live: "https://bidyut-bondhu.netlify.app/", apiDocs: "https://bidyut-bondhu.onrender.com/docs", gradient: "from-amber-500 to-amber-800"
+  },
+  {
+    title: "Library Management", desc: "A full-stack Library Management System built with React, FastAPI, and PostgreSQL featuring JWT authentication, role-based access, book reservations, issue tracking, and a responsive modern UI.", image: "/images/library-management.jpg",
+    tags: ["React", "FastAPI", "PostgreSQL", "JWT"], github: "https://github.com/ismailibnesyed/Library-Management", live: "https://library-management-jet-nu.vercel.app/", apiDocs: "https://library-management-2xx8.onrender.com/docs", gradient: "from-indigo-500 to-sky-500"
+  },
+  {
+    title: "Mood Tracker", desc: "A very beginner-friendly mood tracker project built while learning the fundamentals of Python and interactive application structure.", image: "/images/modetracker.png",
+    tags: ["Python", "Beginner Project"], github: "", live: "", gradient: "from-pink-500 to-orange-400"
+  },
+  {
+    title: "OOP Project", desc: "A beginner Python OOP project built to practice encapsulation, inheritance, polymorphism, abstraction, class relationships, and abstract base classes.", image: "/images/oop_project.jpg",
+    tags: ["Python", "OOP", "Beginner Project"], github: "https://github.com/ismailibnesyed/OOPs-Assignment", live: "", gradient: "from-emerald-500 to-cyan-500"
+  },
 ];
 
 export const reviews = [
