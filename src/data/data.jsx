@@ -12,7 +12,7 @@ export const profile = {
   phone: "+880 1608 591562",
   whatsapp: "8801608591562",
   photo: "/images/profile.png",
-  resumeUrl: "/images/Resume%20of%20Ismail.pdf",
+  resumeUrl: "/resume.pdf",
 };
 
 export const socials = [

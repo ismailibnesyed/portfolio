@@ -20,6 +20,9 @@ export default function Footer() {
             {profile.name}
           </b>
           <p className="mt-3 wrap-break-word">{profile.role}</p>
+          <p className="footer-intro mt-3 max-w-sm border-l-2 border-ac/40 pl-3 text-sm leading-6 text-mu">
+            I build reliable digital experiences with clean code, thoughtful design, and modern web technologies.
+          </p>
         </div>
         <div className="min-w-0">
           <b className="mb-3 block text-base text-main sm:mb-2 sm:text-sm">Quick links</b>

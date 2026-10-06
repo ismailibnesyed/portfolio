@@ -173,7 +173,7 @@ export default function Hero() {
                   )}
 
                   {/* Bottom Gradient */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-shell/70 to-transparent" />
+                  <div className="hero-photo-bottom-gradient pointer-events-none absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-shell/70 to-transparent" />
                 </div>
               </div>
             </div>

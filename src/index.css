@@ -167,8 +167,26 @@ button {
   filter: contrast(1.02) saturate(0.95);
 }
 
+:root[data-theme="light"] .hero-photo {
+  mix-blend-mode: normal;
+}
+
+:root[data-theme="light"] .hero-photo-bottom-gradient {
+  opacity: 0.35;
+}
+
 .theme-surface {
   background: var(--bg-page);
+}
+
+.footer-intro {
+  animation: footer-intro-reveal 0.8s ease-out both, footer-intro-glow 4s ease-in-out 0.8s infinite;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.footer-intro:hover {
+  border-color: var(--color-ac);
+  color: var(--text-main);
 }
 
 .text-mu {
@@ -231,6 +249,29 @@ button {
   }
 }
 
+@keyframes footer-intro-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footer-intro-glow {
+  0%,
+  100% {
+    border-left-color: color-mix(in srgb, var(--color-ac) 40%, transparent);
+  }
+
+  50% {
+    border-left-color: color-mix(in srgb, var(--color-ac) 80%, transparent);
+  }
+}
+
 .marquee {
   display: flex;
   width: max-content;
@@ -258,6 +299,10 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .footer-intro {
+    animation: none;
   }
 }
 
